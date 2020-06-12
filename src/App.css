@@ -38,19 +38,3 @@
 }
 
 
-/*Stat container*/
-
-.stat-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.stat-btn{
-
-}
-
-.stat-txt{
-  margin: 1rem 4px;
-}
