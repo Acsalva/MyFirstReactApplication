@@ -9,6 +9,9 @@ function App() {
   const [clicksStrenght, setClicksStrenght] = useState(0);
   const [clicksHeight, setClicksHeight] = useState(0);
 
+  const MAX_STAT = 10;
+  const MIN_STAT = 0;
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,14 +29,36 @@ function App() {
         </a>
         <button onClick={() => { setClicksTimes(clicksTimes + 1) }}>Click here</button>
         <p>Times clicked: {clicksTimes}</p>
-        <button onClick={() => { setClicksAge(clicksAge + 1) }}>+</button><button onClick={() => { setClicksAge(clicksAge - 1) }}>-</button>
-        <p>Age: {clicksAge} years old</p>
-        <button onClick={() => { setClicksStrenght(clicksStrenght + 1) }}>+</button><button onClick={() => { setClicksStrenght(clicksStrenght - 1) }}>-</button>
-        <p>Strenght: {clicksStrenght}</p>
-        <button onClick={() => { setClicksStamina(clicksStamina + 1) }}>+</button><button onClick={() => { setClicksStamina(clicksStamina - 1) }}>-</button>
-        <p>Stamina: {clicksStamina}</p>
-        <button onClick={() => { setClicksHeight(clicksHeight + 1) }}>+</button><button onClick={() => { setClicksHeight(clicksHeight - 1) }}>-</button>
-        <p>Height: {clicksHeight}cm</p>
+
+        <div className="stat-container">
+          <button className="stat-btn" onClick={() => { setClicksAge(Math.max(clicksAge - 1, MIN_STAT)) }}>-</button>
+          <p className="stat-txt">Age: {clicksAge} years old</p>
+          <button className="stat-btn" onClick={() => { setClicksAge(clicksAge + 1) }}>+</button>
+        </div>
+
+        {/* DRY
+        Do not
+        Repeat
+        Yourself 
+         */}
+
+        <div className="stat-container">
+          <button className="stat-btn" onClick={() => { setClicksStrenght(Math.max(clicksStrenght - 1, MIN_STAT)) }}>-</button>
+          <p className="stat-txt">Strenght: {clicksStrenght}</p>
+          <button className="stat-btn" onClick={() => { setClicksStrenght(Math.min(clicksStrenght + 1, MAX_STAT)) }}>+</button>
+        </div>
+
+        <div className="stat-container">
+          <button className="stat-btn" onClick={() => { setClicksStamina(Math.max(clicksStamina - 1, MIN_STAT)) }}>-</button>
+          <p className="stat-txt">Stamina: {clicksStamina}</p>
+          <button className="stat-btn" onClick={() => { setClicksStamina(Math.min(clicksStamina + 1, MAX_STAT)) }}>+</button>
+        </div>
+
+        <div className="stat-container">
+          <button className="stat-btn" onClick={() => { setClicksHeight(Math.max(clicksHeight - 1, MIN_STAT)) }}>-</button>
+          <p className="stat-txt">Height: {clicksHeight}cm</p>
+          <button className="stat-btn" onClick={() => { setClicksHeight(clicksHeight + 1) }}>+</button>
+        </div>
         {/* Make multiple variables to increase and decrease all the values.  */}
       </header>
     </div>
