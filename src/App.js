@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from './Button';
 
 function App() {
   const [clicksTimes, setClicksTimes] = useState(0);
@@ -17,24 +18,21 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+
+          {/* <Button text="Hi guys" onClick={()=> alert('I was clicked!!!')}/> */}
+
+            <Button>Click me :)</Button>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hallo
-        </a>
-        <button onClick={() => { setClicksTimes(clicksTimes + 1) }}>Click here</button>
+
+
+        {/* <button onClick={() => { setClicksTimes(clicksTimes + 1) }}>Click here</button>
         <p>Times clicked: {clicksTimes}</p>
 
         <div className="stat-container">
           <button className="stat-btn" onClick={() => { setClicksAge(Math.max(clicksAge - 1, MIN_STAT)) }}>-</button>
           <p className="stat-txt">Age: {clicksAge} years old</p>
           <button className="stat-btn" onClick={() => { setClicksAge(clicksAge + 1) }}>+</button>
-        </div>
+        </div> */}
 
         {/* DRY
         Do not
@@ -42,7 +40,7 @@ function App() {
         Yourself 
          */}
 
-        <div className="stat-container">
+        {/* <div className="stat-container">
           <button className="stat-btn" onClick={() => { setClicksStrenght(Math.max(clicksStrenght - 1, MIN_STAT)) }}>-</button>
           <p className="stat-txt">Strenght: {clicksStrenght}</p>
           <button className="stat-btn" onClick={() => { setClicksStrenght(Math.min(clicksStrenght + 1, MAX_STAT)) }}>+</button>
@@ -58,7 +56,7 @@ function App() {
           <button className="stat-btn" onClick={() => { setClicksHeight(Math.max(clicksHeight - 1, MIN_STAT)) }}>-</button>
           <p className="stat-txt">Height: {clicksHeight}cm</p>
           <button className="stat-btn" onClick={() => { setClicksHeight(clicksHeight + 1) }}>+</button>
-        </div>
+        </div> */}
         {/* Make multiple variables to increase and decrease all the values.  */}
       </header>
     </div>
